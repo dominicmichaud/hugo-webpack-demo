@@ -1,16 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ .Scratch.Set "css" "http://localhost:1314/css/bundle.css" }} 
+{{ .Scratch.Set "js" "http://localhost:1314/js/bundle.js" }} 
+{{ if not .Site.IsServer }} 
+{{ .Scratch.Set "css" (index .Site.Data.manifest "main.css") }} 
+{{ .Scratch.Set "js" (index .Site.Data.manifest "main.js") }} 
+{{ end }}
 
-  <title>{{ .Title }}</title>
-  <link rel="stylesheet" href="/assets/main.css">
-  <script src="/assets/bundle.js"></script>
-</head>
-<body>
-  <main id="content">
-    {{- block "main" .}}{{- end}}
-  </main>
-</body>
+<!DOCTYPE html>
+<html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{{ .Title }}</title>
+    {{ $css := .Scratch.Get "css" }}
+    <link rel="stylesheet" href="{{ $css }}"></link>
+  </head>
+  <body>
+    <main id="content">      
+      {{- block "main" .}}{{- end}}
+    </main>
+
+    {{ $js := .Scratch.Get "js" }}
+    <script src="{{ $js }}"></script>
+  </body>
 </html>
