@@ -5,20 +5,24 @@
 {{ .Scratch.Set "js" (index .Site.Data.manifest "main.js") }} 
 {{ end }}
 
+{{/* Set class for fixed navbar */}}
+{{ $navIsFixed := (cond ($.Site.Data.homepage.navbar.fixed) "is-fixed-top" "") }}
+
 <!DOCTYPE html>
-<html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" class="{{$navIsFixed}}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>{{ .Title }}</title>
+    <meta name="description" content="{{ .Site.Params.Description }}">
+
     {{ $css := .Scratch.Get "css" }}
     <link rel="stylesheet" href="{{ $css }}"></link>
   </head>
-  <body>
-    <main id="content">      
-      {{- block "main" .}}{{- end}}
-    </main>
+  <body>              
+    {{- block "main" .}}{{- end}}
 
     {{ $js := .Scratch.Get "js" }}
     <script src="{{ $js }}"></script>

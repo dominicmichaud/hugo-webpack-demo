@@ -1,0 +1,9 @@
+banner:
+  enable: true
+  fullheight: false
+  content_position: "center"
+navbar:
+  fixed: true
+  items: ["services", "about", "contact"]
+section_services:
+  enabled: true

@@ -1,11 +1,17 @@
 {{ define "main" }}
+  {{ $data := $.Site.Data.homepage }}
 
-<div>
-  <p>
-    This is the homepage template
-  </p>
+  <main id="content">
+    {{ with $data.banner.enable }}
+      {{ partial "banner" (dict "context" . "data" $data) }}
+    {{ end }}
 
-  {{ .Content }}
-</div>
+    <div style="display:none;">
+      <p>
+        This is the homepage template
+      </p>
 
+      {{ .Content }}
+    </div>
+  </main>
 {{ end }}

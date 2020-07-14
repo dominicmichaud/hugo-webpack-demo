@@ -1,13 +1,39 @@
-<section class="hero is-primary is-medium">
-  <!-- Hero content: will be in the middle -->
+
+{{/* Set hero height */}}
+{{ $fullheight := (cond (.data.banner.fullheight) "is-fullheight" "is-large") }}
+
+{{/* Set hero content position and column width */}}
+{{ $contentPosition := .data.banner.content_position }}
+{{ $textPosition := "has-text-centered" }}
+{{ $columnWidth := "is-full" }}
+{{ $columnsJustify := "" }}
+{{ with (eq $contentPosition "right") }}
+  {{ $textPosition = "has-text-right-desktop has-text-centered" }}
+  {{ $columnWidth = "is-half-desktop" }}
+  {{ $columnsJustify = "is-justified-right-desktop" }}
+{{ end }}
+{{ with (eq $contentPosition "left") }}
+  {{ $textPosition = "has-text-left-desktop has-text-centered" }}
+  {{ $columnWidth = "is-half-desktop" }}
+  {{ $columnsJustify = "is-justified-left-desktop" }}
+{{ end }}
+
+<section class="hero is-primary {{$fullheight}}">
+  <div class="hero-head">
+    {{ partial "navbar" (dict "context" . "data" .data) }}
+  </div>
   <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title">
-        {{ i18n "hello" }}
-      </h1>
-      <h2 class="subtitle">
-        Subtitle
-      </h2>
+    <div class="container {{$textPosition}}">
+      <div class="columns {{$columnsJustify}}">
+        <div class="column {{$columnWidth}}">
+          <h1 class="title">
+            {{ i18n "hello" }}
+          </h1>
+          <h2 class="subtitle">
+            Subtitle
+          </h2>
+        </div>
+      </div>
     </div>
   </div>
 </section>

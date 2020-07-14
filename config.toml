@@ -1,14 +1,21 @@
 baseURL = "http://example.org/"
 languageCode = "fr"
 title = "My New Hugo Site"
+
+# Uncomment for multilingual website
 defaultContentLanguage = "fr"
 
+# Set Multilingual configs per language
 [languages]
   [languages.fr]
     title = "Mon Site Hugo avec i18n"
     languageName = "Français"
     weight = 1
-  [languages.en]
-    title = "My new Hugo Site with i18n"
-    languageName = "English"
-    weight = 2
+    [params]
+        Description = "Description de mon site"
+#  [languages.en]
+#    title = "My new Hugo Site with i18n"
+#    languageName = "English"
+#    weight = 2
+#    [params]
+#        Description = "My site description"

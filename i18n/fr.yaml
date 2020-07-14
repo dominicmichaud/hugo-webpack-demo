@@ -1,2 +1,8 @@
 - id: hello
   translation: "Bonjour"
+- id: services
+  translation: "Services"
+- id: about
+  translation: "À propos"
+- id: contact
+  translation: "Nous joindre"
