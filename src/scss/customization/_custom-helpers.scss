@@ -5,3 +5,26 @@
 .is-justified-left-desktop {
   justify-content: flex-start;
 }
+
+.is-centered {
+  margin: 0 auto;
+}
+
+.divider {
+  height: 3px;
+  border-radius: 50px;
+  background: #f39200;
+  width: 60px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.card {
+  &.is-rounded {
+    @include border-radius(10px, 10px, 10px, 10px);
+
+    .card-header {
+      @include border-radius(10px, 10px);
+    }
+  }
+}

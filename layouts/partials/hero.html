@@ -1,9 +1,9 @@
 
 {{/* Set hero height */}}
-{{ $fullheight := (cond (.data.banner.fullheight) "is-fullheight" "is-large") }}
+{{ $fullheight := (cond (.data.hero.fullheight) "is-fullheight" "is-large") }}
 
 {{/* Set hero content position and column width */}}
-{{ $contentPosition := .data.banner.content_position }}
+{{ $contentPosition := .data.hero.content_position }}
 {{ $textPosition := "has-text-centered" }}
 {{ $columnWidth := "is-full" }}
 {{ $columnsJustify := "" }}
@@ -26,7 +26,7 @@
     <div class="container {{$textPosition}}">
       <div class="columns {{$columnsJustify}}">
         <div class="column {{$columnWidth}}">
-          <h1 class="title">
+          <h1 class="title is-1">
             {{ i18n "hello" }}
           </h1>
           <h2 class="subtitle">

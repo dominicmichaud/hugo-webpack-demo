@@ -2,16 +2,12 @@
   {{ $data := $.Site.Data.homepage }}
 
   <main id="content">
-    {{ with $data.banner.enable }}
-      {{ partial "banner" (dict "context" . "data" $data) }}
+    {{ with $data.hero.enable }}
+      {{ partial "hero" (dict "context" . "data" $data) }}
     {{ end }}
 
-    <div style="display:none;">
-      <p>
-        This is the homepage template
-      </p>
-
-      {{ .Content }}
-    </div>
+    {{ with $data.section_services.enable }}
+      {{ partial "sections/services" (dict "context" . "data" $data) }}
+    {{ end }}
   </main>
 {{ end }}

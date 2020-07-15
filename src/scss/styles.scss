@@ -12,5 +12,6 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 
 // Custom styles
+@import "./customization/custom-mixins";
 @import "./customization/custom-variables";
 @import "./customization/custom-helpers";

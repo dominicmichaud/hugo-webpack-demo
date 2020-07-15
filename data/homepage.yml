@@ -1,9 +1,12 @@
-banner:
+ogmeta:
   enable: true
-  fullheight: false
-  content_position: "center"
 navbar:
   fixed: true
   items: ["services", "about", "contact"]
+hero:
+  enable: true
+  fullheight: false
+  content_position: "center"
 section_services:
-  enabled: true
+  enable: true
+  cards_total: 3

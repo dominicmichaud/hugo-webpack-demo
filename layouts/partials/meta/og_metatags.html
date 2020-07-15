@@ -1,7 +1,11 @@
-<meta property="og:title" content="Flip Ma Cuisine">
-<meta property="og:description"
-    content="Spécialiste en rénovation de cuisine à Québec. Nous offrons un service personnalisé allant de la conception jusqu'à l'installation de cuisine.">
-<meta property="og:image" content="DOMAIN-URL/assets/img/sharing-flip-cuisine.jpg"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="627"/>
-<meta property="og:url" content="DOMAIN-URL">
+{{ "<!-- OG METATAGS -->" | safeHTML }} 
+{{ $favurl := "img/ogmeta" }}
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description" content="{{ .Site.Params.Description }}" />
+<meta
+  property="og:image"
+  content="{{ .Site.BaseURL }}{{$favurl}}/ogmeta-sharing.jpg"
+/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:url" content="{{ .Site.BaseURL }}" />

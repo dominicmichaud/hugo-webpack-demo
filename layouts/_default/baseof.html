@@ -11,19 +11,28 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" class="{{$navIsFixed}}">
   <head>
+    {{ "<!-- METATAGS -->" | safeHTML }}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>{{ .Title }}</title>
     <meta name="description" content="{{ .Site.Params.Description }}">
 
+    {{/* Set favicons */}}
+    {{ partial "meta/favicon" . }}
+
+    {{/* Set OG Metas */}}
+    {{ partial "meta/og_metatags" . }}
+
+    {{/* Set stylesheet */}}
+    {{ "<!-- STYLES -->" | safeHTML }}
     {{ $css := .Scratch.Get "css" }}
     <link rel="stylesheet" href="{{ $css }}"></link>
   </head>
   <body>              
     {{- block "main" .}}{{- end}}
 
+    {{ "<!-- SCRIPTS -->" | safeHTML }} 
     {{ $js := .Scratch.Get "js" }}
     <script src="{{ $js }}"></script>
   </body>
