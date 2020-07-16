@@ -7,6 +7,10 @@ hero:
   enable: true
   fullheight: false
   content_position: "center"
+section_title:
+  has_subtitle: true
+  divider_is_img: false
+  divider_img_extension: "svg"
 section_services:
   enable: true
   cards_total: 3

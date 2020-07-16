@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="143px" height="24px" viewBox="0 0 143 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="section/header-light" transform="translate(-379.000000, -83.000000)">
+            <g id="Group-2" transform="translate(379.000000, 83.000000)">
+                <line x1="142" y1="12" x2="94" y2="12" id="Line" stroke-opacity="0.25" stroke="#000000" stroke-linecap="square"></line>
+                <line x1="49" y1="12" x2="1" y2="12" id="Line" stroke-opacity="0.25" stroke="#000000" stroke-linecap="square"></line>
+                <rect id="Rectangle" fill-opacity="0.25" fill="#000000" transform="translate(72.000000, 12.000000) rotate(45.000000) translate(-72.000000, -12.000000) " x="64" y="4" width="16" height="16"></rect>
+                <polygon id="F" fill="#FFFFFF" fill-rule="nonzero" transform="translate(71.000000, 11.000000) rotate(45.000000) translate(-71.000000, -11.000000) " points="69.9855072 18 69.9855072 12.6666667 75.1485507 12.6666667 75.1485507 9.33333333 69.9855072 9.33333333 69.9855072 7.58823529 76 7.58823529 76 4 66 4 66 18"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

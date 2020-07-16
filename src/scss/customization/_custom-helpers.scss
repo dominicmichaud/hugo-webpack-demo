@@ -13,10 +13,17 @@
 .divider {
   height: 3px;
   border-radius: 50px;
-  background: #f39200;
+  background: $divider_bg_color;
   width: 60px;
   margin-top: 16px;
   margin-bottom: 16px;
+
+  &.img-divider {
+    width: 100%;
+    background: none;
+    border-radius: 0;
+    height: $divider_img_height;
+  }
 }
 
 .card {
