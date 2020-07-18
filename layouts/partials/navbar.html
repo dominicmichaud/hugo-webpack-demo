@@ -1,5 +1,18 @@
+{{/* TODO */}}
+{{/* 
+    In first range loop, add else statement and add remaining link-items but hide-desktop
+    Add site configs for Social Media
+    Add Social Media icons in menu, limit to 2, add remaining in sub dropdown as text with small icon
+    Add i18n for CTA button text
+    add CTA hash link
+    Setup navbar animations offcanvas, push-overlay full height
+    on mobile remove link dropdown and add normal items back
+    Add scroll position opacity overlay bg on menu, 2way-gradient if possible
+*/}}
+
 {{/* Set navbar items */}} 
 {{ $navitems := .data.navbar.items }}
+{{ $navitems_total := $navitems| len }}
 
 <nav class="navbar is-transparent is-fixed-top">
   <div class="container">
@@ -16,9 +29,29 @@
     <div id="navbarMenuHeroA" class="navbar-menu">
       <div class="navbar-end">
         {{ range $elem_index, $elem_val := $navitems }}
-          <a href="#{{$elem_val | urlize}}" class="navbar-item">
-            {{ i18n $elem_val }}
-          </a>
+          {{ if lt $elem_index 4 }}
+            <a href="#{{$elem_val | urlize}}" class="navbar-item">
+              {{ i18n $elem_val }}
+            </a>
+          {{ end }}
+        {{ end }}
+
+        {{ if ge $navitems_total 4 }}
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link is-arrowless">
+              <i class="fas fa-ellipsis-v"></i>
+            </a>
+
+            <div class="navbar-dropdown is-boxed">
+              {{ range $elem_index, $elem_val := $navitems }}
+                {{ if ge $elem_index 4 }}
+                  <a href="#{{$elem_val | urlize}}" class="navbar-item has-text-dark">
+                    {{ i18n $elem_val }}
+                  </a>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
         {{ end }}
         
         <span class="navbar-item">

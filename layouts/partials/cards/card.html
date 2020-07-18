@@ -1,0 +1,75 @@
+{{/* TODO */}}
+{{/* 
+  Remove card card type array declaration and sorted array
+  Add new front matter of image-url
+  Add new i18n key for card Title
+  Add new i18n key for card CTA button text
+  Add new homepage configs to add or remove CTA button to card
+  Use card order param to create URL params for lightbox: ex -> #slbx?s=2
+*/}}
+
+{{/* Set Cards configs */}}
+{{ $all_cards := (where (where .pages "Section" "services" ) ".Params.type" "eq" "card") }}
+{{ $sorted_cards := sort $all_cards ".Params.order" "asc" }}
+{{ $has_image := .data.section_services.card_has_image }}
+{{ $image_has_radius := .data.section_services.image_has_radius }}
+{{ $img_classes := (cond ($image_has_radius) "image-rounded" "") }}
+{{ $card_total := $all_cards | len }}
+{{ $card_width := "is-one-third" }}
+{{ $card_index := "" }}
+{{ $base := "card_" }}
+
+{{ with (ge $card_total 2) }}
+  {{ $card_width = "is-half-tablet is-one-third-desktop" }}
+{{ end }}
+
+{{ with (ge $card_total 3) }}
+  {{ $card_width = "is-one-third-tablet" }}
+{{ end }}
+
+{{ with (ge $card_total 4) }}
+  {{ $card_width = "is-half-tablet is-one-quarter-desktop" }}
+{{ end }}
+
+{{ with (ge $card_total 5) }}
+  {{ with (eq (mod $card_total 2) 0) }}
+    {{ $card_width = "is-half-tablet is-one-third-desktop even" }}
+  {{ end }}
+
+  {{ with (eq (mod $card_total 2) 1) }}
+    {{ $card_width = "is-one-third" }}
+  {{ end }}
+{{ end }}
+
+<div class="columns pt-4 pb-4 is-multiline is-centered">
+  {{ range $sorted_cards }}    
+    {{ $card_index = print $base .Params.order}}
+    <div class="column is-flex-tablet {{$card_width}}">
+      <div class="card is-rounded">      
+        {{ with $has_image }}
+          <div class="card-image">
+            <figure class="image is-2by1">
+              <img class="{{$img_classes}}" src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
+        {{ else }}
+          <div class="card-header">
+            <p class="card-header-title">
+              My Card
+            </p>
+          </div>
+        {{ end }}
+        
+        <div class="card-content">
+          <div class="content">
+            <p class="title is-4">{{.Title}}</p>
+
+            <p>
+              {{ i18n $card_index }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>    
+  {{ end }}
+</div>

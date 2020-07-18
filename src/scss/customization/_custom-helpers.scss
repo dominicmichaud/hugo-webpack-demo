@@ -33,5 +33,9 @@
     .card-header {
       @include border-radius(10px, 10px);
     }
+
+    .image-rounded {
+      @include border-radius(10px, 10px);
+    }
   }
 }
