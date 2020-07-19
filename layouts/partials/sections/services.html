@@ -1,17 +1,11 @@
-{{/* TODO */}}
-{{/* 
-    Exclude all ".pages" from card template to make card more modable and reusable
-    Initialize a variable with Section content of card type Services
-    Add new dict params with new variable to card partial
-    Card should not know wich type it is inside it's logic
-*/}}
-
+{{ $all_service_cards := (where (where .pages "Section" "services" ) ".Params.type" "eq" "card") }}
+{{ $sorted_cards := sort $all_service_cards ".Params.order" "asc" }}
 
 <section class="section">
   <div class="container">
     {{ partial "section_title/title_with_underline" (dict "context" . "data" .data) }}
   </div>
   <div class="container">
-    {{ partial "cards/card" (dict "context" . "data" .data "pages" .pages) }}
+    {{ partial "cards/card" (dict "context" . "data" .data "cards" $sorted_cards) }}
   </div>
 </section>

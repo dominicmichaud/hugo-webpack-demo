@@ -1,14 +1,20 @@
 {{ define "main" }}
+  {{/* Get Site data */}}
   {{ $data := $.Site.Data.homepage }}
   {{ $pages := .Site.Pages }}
 
   <main id="content">
+    {{/* HERO PARTIAL */}}
     {{ with $data.hero.enable }}
-      {{ partial "hero" (dict "context" . "data" $data) }}
+      {{ partial "hero" (dict "context" . "data" $data "pages" $pages) }}
     {{ end }}
 
+    {{/* SERVICES PARTIAL */}}
     {{ with $data.section_services.enable }}
       {{ partial "sections/services" (dict "context" . "data" $data "pages" $pages) }}
     {{ end }}
+
+    {{/* FOOTER PARTIAL */}}
+    {{ partial "footer" (dict "context" . "data" $data "pages" $pages) }}
   </main>
 {{ end }}

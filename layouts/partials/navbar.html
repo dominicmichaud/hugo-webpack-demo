@@ -1,18 +1,18 @@
 {{/* TODO */}}
 {{/* 
-    In first range loop, add else statement and add remaining link-items but hide-desktop
-    Add site configs for Social Media
-    Add Social Media icons in menu, limit to 2, add remaining in sub dropdown as text with small icon
     Add i18n for CTA button text
     add CTA hash link
     Setup navbar animations offcanvas, push-overlay full height
-    on mobile remove link dropdown and add normal items back
     Add scroll position opacity overlay bg on menu, 2way-gradient if possible
 */}}
 
 {{/* Set navbar items */}} 
 {{ $navitems := .data.navbar.items }}
 {{ $navitems_total := $navitems| len }}
+{{ $has_social_media := .data.navbar.has_social_media }}
+{{ $social_medias_items := (where (where .pages "Section" "socialmedias" ) ".Params.type" "eq" "social_link") }}
+{{ $sorted_social := (where $social_medias_items ".Params.active" "eq" true) }}
+{{ $all_sorted_social := sort $social_medias_items ".Params.order" "asc" }}
 
 <nav class="navbar is-transparent is-fixed-top">
   <div class="container">
@@ -28,16 +28,22 @@
     </div>
     <div id="navbarMenuHeroA" class="navbar-menu">
       <div class="navbar-end">
+        {{/* Loop Nav Link items */}}
         {{ range $elem_index, $elem_val := $navitems }}
           {{ if lt $elem_index 4 }}
             <a href="#{{$elem_val | urlize}}" class="navbar-item">
               {{ i18n $elem_val }}
             </a>
+          {{ else }}
+            <a href="#{{$elem_val | urlize}}" class="navbar-item is-hidden-desktop">
+              {{ i18n $elem_val }}
+            </a>
           {{ end }}
         {{ end }}
 
+        {{/* If Nav Link items exceeds 4, put them in menu dropdown */}}
         {{ if ge $navitems_total 4 }}
-          <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-item has-dropdown is-hoverable is-hidden-tablet-only is-hidden-mobile">
             <a class="navbar-link is-arrowless">
               <i class="fas fa-ellipsis-v"></i>
             </a>
@@ -52,6 +58,24 @@
               {{ end }}
             </div>
           </div>
+        {{ end }}
+
+        {{/* Loop Social Media items, only two can be added to desktop navbar */}}
+        {{ with $has_social_media }}
+          {{ range first 2 $sorted_social }}
+            <a href="{{.Params.social_url}}" target="_blank" class="navbar-item is-hidden-mobile is-hidden-tablet-only">
+              {{.Params.icon_path | safeHTML}}
+            </a>
+          {{ end }}
+
+          {{/* Mobile and Tablet only, Loop all Social Media items */}}
+          <span class="navbar-item is-flex is-hidden-desktop">
+            {{ range $all_sorted_social }}
+              <a href="{{.Params.social_url}}" target="_blank" class="has-text-white is-size-3 mr-3">
+                {{.Params.icon_path | safeHTML}}
+              </a>
+            {{ end }}
+          </span>          
         {{ end }}
         
         <span class="navbar-item">

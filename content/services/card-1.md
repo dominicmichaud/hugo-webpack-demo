@@ -3,6 +3,6 @@ title: My First Card
 date: 2020-07-15
 type: card
 section: services
-translation_key: "card_1"
+card_img: "/img/services/beautiful_girl_vectorForFree.png"
 order: 1
 ---

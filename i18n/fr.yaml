@@ -1,5 +1,7 @@
-- id: hello
-  translation: "Bonjour"
+- id: hero_title
+  translation: "Hero Titre"
+- id: hero_subtitle
+  translation: "Hero sous-titre"
 - id: services
   translation: "Services"
 - id: about
@@ -19,6 +21,6 @@
 - id: card_3
   translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know"
 - id: card_4
-  translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know"
+  translation: "CARD 4 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know"
 - id: card_5
-  translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know"
+  translation: "CARD 5 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know"

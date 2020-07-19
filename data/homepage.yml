@@ -3,6 +3,7 @@ ogmeta:
 navbar:
   fixed: true
   items: ["services", "about", "contact", "test_1", "test_2", "test_3"]
+  has_social_media: true
 hero:
   enable: true
   fullheight: false
@@ -13,5 +14,5 @@ section_title:
   divider_img_extension: "svg"
 section_services:
   enable: true
-  card_has_image: false
-  image_has_radius: false
+  card_has_image: true
+  image_has_radius: true

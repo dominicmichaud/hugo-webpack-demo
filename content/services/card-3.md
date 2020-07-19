@@ -3,7 +3,7 @@ title: My Go Journey
 date: 2020-07-17
 type: card
 section: services
-translation_key: "card_3"
+card_img: "/img/services/data_analysis_illustration_VectorForFree-01.jpg"
 order: 3
 ---
 
