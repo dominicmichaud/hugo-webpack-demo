@@ -6,7 +6,7 @@
   <main id="content">
     {{/* HERO PARTIAL */}}
     {{ with $data.hero.enable }}
-      {{ partial "hero" (dict "context" . "data" $data "pages" $pages) }}
+      {{ partial "hero_banner/hero" (dict "context" . "data" $data "pages" $pages) }}
     {{ end }}
 
     {{/* SERVICES PARTIAL */}}

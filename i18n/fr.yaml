@@ -14,13 +14,15 @@
   translation: "Test link 2"
 - id: test_3
   translation: "Test link 3"
-- id: card_1
+- id: service_1
   translation: "CARD 1 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus, mollitia quod obcaecati amet laudantium quae, saepe illo, quisquam quaerat explicabo."
-- id: card_2
+- id: service_2
   translation: "CARD 2 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus."
-- id: card_3
-  translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know"
-- id: card_4
-  translation: "CARD 4 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know"
-- id: card_5
-  translation: "CARD 5 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know"
+- id: service_3
+  translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know."
+- id: service_4
+  translation: "CARD 4 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know."
+- id: service_5
+  translation: "CARD 5 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know."
+- id: service_6
+  translation: "CARD 6 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus, mollitia quod obcaecati amet laudantium quae, saepe illo, quisquam quaerat explicabo."

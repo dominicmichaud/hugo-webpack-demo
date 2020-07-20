@@ -6,6 +6,6 @@
     {{ partial "section_title/title_with_underline" (dict "context" . "data" .data) }}
   </div>
   <div class="container">
-    {{ partial "cards/card" (dict "context" . "data" .data "cards" $sorted_cards) }}
+    {{ partial "cards/card" (dict "context" . "data" .data "cards" $sorted_cards "base_name" "service_") }}
   </div>
 </section>

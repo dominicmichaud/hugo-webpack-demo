@@ -1,0 +1,18 @@
+{{/* Get Social Medias for hero footer */}}
+{{ $social_medias_items := (where (where .pages "Section" "socialmedias" ) ".Params.type" "eq" "social_link") }}
+{{ $all_sorted_social := sort $social_medias_items ".Params.order" "asc" }}
+
+<!-- Hero footer: will stick at the bottom -->
+<div class="hero-foot is-abs-bottom">  
+	<div class="container">
+		<div class="columns">					
+			<div class="column">
+				{{ range $all_sorted_social }}				
+					<a href="{{.Params.social_url}}" target="_blank" class="has-text-white is-size-5 mr-3">
+						{{.Params.icon_path | safeHTML}}
+					</a>				
+				{{ end }}   
+			</div>     
+		</div>
+	</div>
+</div>

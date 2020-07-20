@@ -8,6 +8,7 @@ hero:
   enable: true
   fullheight: false
   content_position: "center"
+  social_media_footer: false
 section_title:
   has_subtitle: true
   divider_is_img: false

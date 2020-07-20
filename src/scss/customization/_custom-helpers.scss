@@ -39,3 +39,15 @@
     }
   }
 }
+
+.hero {
+  position: relative;
+
+  .hero-foot {
+    &.is-abs-bottom {
+      position: absolute;
+      left: 45px;
+      bottom: 16px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
-
 {{/* Set hero height */}}
 {{ $fullheight := (cond (.data.hero.fullheight) "is-fullheight" "is-large") }}
+{{ $has_hero_footer := .data.hero.social_media_footer }}
 
 {{/* Set hero content position and column width */}}
 {{ $contentPosition := .data.hero.content_position }}
@@ -36,4 +36,8 @@
       </div>
     </div>
   </div>
+    
+  {{ if $has_hero_footer }}
+    {{ partial "hero_banner/hero_footer" (dict "context" . "data" .data "pages" .pages) }}
+  {{ end }}
 </section>
