@@ -1,0 +1,20 @@
+{{/* Build HTML5 srcset for responsive and fast image loading */}}
+
+{{ $src_base := .base }}
+{{ $src_url := .srcurl }}
+{{ $src_path := print $src_base "/" $src_url }}
+{{ $src := resources.Get $src_path }}
+
+{{ $tiny := $src.Resize "480x320 q85" }}
+{{ $small := $src.Resize "800x480 q85" }}
+
+<img  	
+  	sizes="(min-width: 500px) 80vw, 100vw"
+  	class="{{.classnames}}"
+	srcset='
+	{{ with $tiny.RelPermalink }}{{.}} 480w{{ end }}, 
+	{{ with $small.RelPermalink }}{{.}} 800w{{ end }}, 
+	{{ $src.RelPermalink }} 1200w'
+	src="{{ $tiny.RelPermalink }}"  
+  	alt="{{$src_url}}"
+/>

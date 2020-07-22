@@ -12,7 +12,7 @@
     {{/* SERVICES PARTIAL */}}
     {{ with $data.section_services.enable }}
       {{ partial "sections/services" (dict "context" . "data" $data "pages" $pages) }}
-    {{ end }}
+    {{ end }}    
 
     {{/* FOOTER PARTIAL */}}
     {{ partial "footer" (dict "context" . "data" $data "pages" $pages) }}

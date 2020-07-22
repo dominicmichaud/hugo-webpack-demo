@@ -1,6 +1,5 @@
 {{/* TODO */}}
 {{/* 
-  Find how to add add new Hugo image processing Resizing, etc
   Add new i18n key for card Title
   Add new i18n key for card CTA button text
   Add new homepage configs to add or remove CTA button to card
@@ -17,6 +16,7 @@
 {{ $card_index := "" }}
 {{ $base := .base_name }}
 {{ $card_img_path := "" }}
+{{ $card_section := "" }}
 
 
 {{ with (ge $card_total 2) }}
@@ -44,14 +44,15 @@
 <div class="columns pt-4 pb-4 is-multiline is-centered">
   {{ range .cards }}    
     {{ $card_index = print $base .Params.order}}
+    {{ $card_section = .Params.section }}
     {{ $card_img_path = .Params.card_img }}
 
     <div class="column is-flex-tablet {{$card_width}}">
       <div class="card is-rounded">      
         {{ with $has_image }}
           <div class="card-image">
-            <figure class="image">
-              <img class="{{$img_classes}}" src="{{$card_img_path}}" alt="Placeholder image">
+            <figure class="image is-5by3">
+            {{ partial "image_processing/card_srcset" (dict "context" . "base" $card_section "srcurl" $card_img_path "classnames" $img_classes) }}
             </figure>
           </div>
         {{ else }}
