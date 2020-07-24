@@ -5,11 +5,17 @@
 {{ $divider_extension := .data.section_title.divider_img_extension }}
 {{ $divider_classes := (cond ($divider_is_img) "divider img-divider" "divider") }}
 {{ $subtitle_classes := (cond ($has_subtitle) "" "is-hidden") }}
+{{ $title := .title }}
+{{ $subtitle := .subtitle }}
 
 <div class="columns">
   <div class="column has-text-centered">
-    <h2 class="title has-text-white is-size-2">Section title</h2>
-    <h3 class="subtitle has-text-white-bis is-size-5 {{$subtitle_classes}}">Section subtitle</h3>
+    <h2 class="title has-text-white pb-2">
+      {{ i18n $title }}
+    </h2>
+    <h3 class="subtitle has-text-white-bis is-size-6 {{$subtitle_classes}}">
+      {{ i18n $subtitle }}
+    </h3>
     <div class="{{$divider_classes}} is-centered">
       {{ with $divider_is_img }}
         <img src="{{$dividerurl}}{{$divider_extension}}" alt="Divider" />

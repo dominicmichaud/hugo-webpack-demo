@@ -1,11 +1,14 @@
 {{ $all_service_cards := (where (where .pages "Section" "services" ) ".Params.type" "eq" "card") }}
 {{ $sorted_cards := sort $all_service_cards ".Params.order" "asc" }}
+{{ $has_image := .data.section_services.card_has_image }}
+{{ $image_has_radius := .data.section_services.image_has_radius }}
+{{ $has_cta_btn := .data.section_services.card_has_cta_btn }}
 
 <section class="section">
   <div class="container">
-    {{ partial "section_title/title_with_underline" (dict "context" . "data" .data) }}
+    {{ partial "section_title/title_with_underline" (dict "context" . "data" .data "title" "service_title" "subtitle" "service_subtitle") }}
   </div>
   <div class="container">
-    {{ partial "cards/card" (dict "context" . "data" .data "cards" $sorted_cards "base_name" "service_") }}
+    {{ partial "cards/card" (dict "context" . "data" .data "cards" $sorted_cards "base_name" "services" "card_image" $has_image "img_radius" $image_has_radius "cta_btn" $has_cta_btn) }}
   </div>
 </section>

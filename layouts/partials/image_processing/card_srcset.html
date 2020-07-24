@@ -13,8 +13,7 @@
   	class="{{.classnames}}"
 	srcset='
 	{{ with $tiny.RelPermalink }}{{.}} 480w{{ end }}, 
-	{{ with $small.RelPermalink }}{{.}} 800w{{ end }}, 
-	{{ $src.RelPermalink }} 1200w'
-	src="{{ $tiny.RelPermalink }}"  
+	{{ with $small.RelPermalink }}{{.}} 800w{{ end }}'
+	src="{{ $small.RelPermalink }}"  
   	alt="{{$src_url}}"
 />

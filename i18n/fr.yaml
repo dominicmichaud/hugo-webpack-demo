@@ -1,3 +1,5 @@
+- id: navbar_cta
+  translation: "Soumission"
 - id: hero_title
   translation: "Hero Titre"
 - id: hero_subtitle
@@ -14,15 +16,43 @@
   translation: "Test link 2"
 - id: test_3
   translation: "Test link 3"
-- id: service_1
-  translation: "CARD 1 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus, mollitia quod obcaecati amet laudantium quae, saepe illo, quisquam quaerat explicabo."
-- id: service_2
+- id: service_title
+  translation: "Services"
+- id: service_subtitle
+  translation: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem!"
+- id: services_card_title_1
+  translation: "Ma première carte"
+- id: services_card_content_1
+  translation: "CARD 1 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus."
+- id: services_card_btn_label_1
+  translation: "Soumission"
+- id: services_card_title_2
+  translation: "Carte style Hugo"
+- id: services_card_content_2
   translation: "CARD 2 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus."
-- id: service_3
-  translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know."
-- id: service_4
-  translation: "CARD 4 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know."
-- id: service_5
-  translation: "CARD 5 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Oh Baby baby how was I suppose to know."
-- id: service_6
-  translation: "CARD 6 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus, mollitia quod obcaecati amet laudantium quae, saepe illo, quisquam quaerat explicabo."
+- id: services_card_btn_label_2
+  translation: "CTA Button"
+- id: services_card_title_3
+  translation: "Mon Odyssée Hugo"
+- id: services_card_content_3
+  translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus."
+- id: services_card_btn_label_3
+  translation: "En savoir plus"
+- id: services_card_title_4
+  translation: "Mon Odyssée Hugo"
+- id: services_card_content_4
+  translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus."
+- id: services_card_btn_label_4
+  translation: "En savoir plus"
+- id: services_card_title_5
+  translation: "Mon Odyssée Hugo"
+- id: services_card_content_5
+  translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus."
+- id: services_card_btn_label_5
+  translation: "En savoir plus"
+- id: services_card_title_6
+  translation: "Mon Odyssée Hugo"
+- id: services_card_content_6
+  translation: "CARD 3 FR - Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aspernatur vitae, earum minus eius sed quidem! Doloremque error ducimus."
+- id: services_card_btn_label_6
+  translation: "En savoir plus"

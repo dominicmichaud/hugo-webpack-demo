@@ -1,6 +1,5 @@
 {{/* TODO */}}
 {{/* 
-    Add i18n for CTA button text
     add CTA hash link
     Setup navbar animations offcanvas, push-overlay full height
     Add scroll position opacity overlay bg on menu, 2way-gradient if possible
@@ -79,11 +78,10 @@
         {{ end }}
         
         <span class="navbar-item">
-          <a class="button is-primary is-inverted">
-            <span class="icon">
-              <i class="fab fa-github"></i>
+          <a class="button is-primary is-inverted">            
+            <span>
+              {{ i18n "navbar_cta" }}
             </span>
-            <span>Download</span>
           </a>
         </span>
       </div>

@@ -16,4 +16,5 @@ section_title:
 section_services:
   enable: true
   card_has_image: true
-  image_has_radius: true
+  card_has_cta_btn: true
+  image_has_radius: false

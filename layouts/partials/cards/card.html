@@ -1,23 +1,18 @@
-{{/* TODO */}}
-{{/* 
-  Add new i18n key for card Title
-  Add new i18n key for card CTA button text
-  Add new homepage configs to add or remove CTA button to card
-  Use card order param to create URL params for lightbox: ex -> #slbx?s=2
-  https://bulma.io/images/placeholders/1280x960.png
-*/}}
-
 {{/* Set Cards configs */}}
-{{ $has_image := .data.section_services.card_has_image }}
-{{ $image_has_radius := .data.section_services.image_has_radius }}
+{{ $has_image := .card_image }}
+{{ $image_has_radius := .img_radius }}
+{{ $has_cta_btn := .cta_btn }}
 {{ $img_classes := (cond ($image_has_radius) "image-rounded" "") }}
 {{ $card_total := .cards | len }}
 {{ $card_width := "is-one-third" }}
-{{ $card_index := "" }}
+{{ $card_title := "" }}
+{{ $card_content := "" }}
+{{ $card_btn_label := "" }}
+{{ $card_btn_link := "" }}
+{{ $lightbox_type := substr .base_name 0 1 }}
 {{ $base := .base_name }}
 {{ $card_img_path := "" }}
 {{ $card_section := "" }}
-
 
 {{ with (ge $card_total 2) }}
   {{ $card_width = "is-half-tablet is-one-third-desktop" }}
@@ -43,35 +38,42 @@
 
 <div class="columns pt-4 pb-4 is-multiline is-centered">
   {{ range .cards }}    
-    {{ $card_index = print $base .Params.order}}
+    {{ $card_title = print $base "_card_title_" .Params.order}}
+    {{ $card_content = print $base "_card_content_" .Params.order}}
+    {{ $card_btn_label = print $base "_card_btn_label_" .Params.order}}
+    {{ $card_btn_link = print "#lbx?" $lightbox_type "=" .Params.order }}
     {{ $card_section = .Params.section }}
     {{ $card_img_path = .Params.card_img }}
 
     <div class="column is-flex-tablet {{$card_width}}">
-      <div class="card is-rounded">      
+      <div class="card is-rounded is-equal-height">      
         {{ with $has_image }}
           <div class="card-image">
             <figure class="image is-5by3">
             {{ partial "image_processing/card_srcset" (dict "context" . "base" $card_section "srcurl" $card_img_path "classnames" $img_classes) }}
             </figure>
-          </div>
-        {{ else }}
-          <div class="card-header">
-            <p class="card-header-title">
-              My Card
-            </p>
-          </div>
+          </div>        
         {{ end }}
         
-        <div class="card-content">
+        <div class="card-content has-top-shadow">
           <div class="content">
-            <p class="title is-4">{{.Title}}</p>
+            <p class="title is-5 has-text-primary">
+              {{ i18n $card_title }}
+            </p>
 
             <p>
-              {{ i18n $card_index }}
-            </p>
+              {{ i18n $card_content }}
+            </p>            
           </div>
         </div>
+
+        {{ with $has_cta_btn }}
+          <footer class="card-footer">
+            <a href="{{$card_btn_link}}" class="button is-primary">
+              {{ i18n $card_btn_label }}
+            </a>
+          </footer>
+        {{ end }}
       </div>
     </div>    
   {{ end }}

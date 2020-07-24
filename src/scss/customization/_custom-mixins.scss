@@ -9,3 +9,15 @@
   -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
   border-radius: $top-left $top-right $bottom-right $bottom-left;
 }
+
+@mixin card-button($width: 50%, $minw: 150px) {
+  width: 100%;
+  min-width: 100%;
+  margin-bottom: 0;
+
+  @media screen and (min-width: 767px) {
+    width: $width;
+    min-width: $minw;
+    margin-bottom: 8px;
+  }
+}
